@@ -2,5 +2,13 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import 'default-passive-events'
+//vant功能
+import getVant from '@/plugins'
 
-createApp(App).use(store).use(router).mount('#app')
+
+const app=createApp(App)
+getVant(app)
+app.use(store)
+app.use(router)
+app.mount('#app')
